@@ -1,6 +1,7 @@
 #!/bin/bash
 set -x
 
+#Conculate the resource details for all namespaces  
 echo "namespace,pod,container,request_cpu,limit_cpu,usage_cpu,request_mem,limit_mem,usage_mem" >> resource-result.csv
 
 for ns in $(kubectl get ns -o jsonpath='{.items[*].metadata.name}'); do
