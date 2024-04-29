@@ -10,7 +10,7 @@ and generate a kubeconfig to limit this config only has access to sepcify namesp
 
 Usage:
   * kubectl apply -f namespace_init.yaml
-  * kubernetes_add_service_account_kubeconfig.sh <NAMESPACE> <SERVICE_ACCOUNT_NAME>
+  * kubernetes_add_service_account_kubeconfig.sh \<NAMESPACE\> <SERVICE_ACCOUNT_NAME>
   
 Note:
-  * SERVICE_ACCOUNT_NAME is default to ns-sa-<NAMESPACE>
+  * SERVICE_ACCOUNT_NAME is default to ns-sa-\<NAMESPACE\>
