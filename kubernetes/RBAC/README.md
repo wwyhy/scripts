@@ -2,16 +2,15 @@ This script is used to create
   * namespace
   * service account
   * token
-  * role
+  * clusterrole
   * rolebinding
-  * config
-to limit this config only has full access to sepcify namespace.
+  * clusterrolebinding
+
+and generate a kubeconfig to limit this config only has access to sepcify namespace.
 
 Usage:
-  xxx.sh NAMESPACE
-
-
-kubernetes_sa_kubeconfig.sh:
-
-https://gist.github.com/innovia/fbba8259042f71db98ea8d4ad19bd708
-
+  * kubectl apply -f namespace_init.yaml
+  * kubernetes_add_service_account_kubeconfig.sh <NAMESPACE> <SERVICE_ACCOUNT_NAME>
+  
+Note:
+  * SERVICE_ACCOUNT_NAME is default to ns-sa-<NAMESPACE>
