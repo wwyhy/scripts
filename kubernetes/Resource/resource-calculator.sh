@@ -15,7 +15,7 @@ for ns in $(kubectl get ns -o jsonpath='{.items[*].metadata.name}'); do
             usage_cpu=$(kubectl top pod $pod -n $ns --containers=true --no-headers | awk '{print $3}' | awk '{s+=$1} END {print s}')
             usage_mem=$(kubectl top pod $pod -n $ns --containers=true --no-headers | awk '{print $4}' | awk '{s+=$1} END {print s}')
             if [[ "$req_cpu" != "" && "$req_mem" != "" && "$lim_cpu" != "" && "$lim_mem" != "" ]]; then
-                echo "$ns,pod,container,req_cpu,lim_cpu,usage_cpu,req_mem,lim_mem,usage_mem" >> resource-result.csv
+                echo "$ns,$pod,$container,$req_cpu,$lim_cpu,$usage_cpu,$req_mem,$lim_mem,$usage_mem" >> resource-result.csv
             fi
         done
     done
